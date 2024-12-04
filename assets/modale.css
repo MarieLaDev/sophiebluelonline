@@ -1,0 +1,281 @@
+/**************************************/
+/* Mise en forme de la fenêtre modale */
+/**************************************/
+#modale {
+     display: none;
+     z-index: 1;
+     flex-direction: column;
+     align-items: center;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 630px;
+     height: 688px;
+     border-radius: 10px;
+     background-color: white;
+     gap: 6px;
+}
+
+.active {
+     display: flex !important;
+}
+
+.arriere-plan {
+     display: flex;
+     position: fixed;
+     top: 59px;
+     left: 0%;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.3);
+     z-index: 1;
+}
+
+.tete-modale {
+     position: relative;
+     /* doit être relative pour placer les éléments enfants correctement */
+     width: 100%;
+}
+
+#retour-modale {
+     position: absolute;
+     /* doit être absolute + top et right pour se positionner correctement */
+     top: 24px;
+     left: 24px;
+     cursor: pointer;
+     /* Affiche le curseur comme pour un lien */
+}
+
+#close-modale {
+     position: absolute;
+     /* doit être absolute + top et right pour se positionner correctement */
+     top: 24px;
+     right: 24px;
+     cursor: pointer;
+}
+
+.int-modale {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 45px;
+     margin-top: 55px;
+}
+
+.titre-modale {
+     font-size: 26px;
+     font-family: "Work sans";
+     text-align: center;
+     margin-bottom: 40px;
+}
+
+/***** Modale supression ******/
+.miniatures {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap: 8px;
+     grid-template-rows: auto;
+     width: 440px;
+     max-height: 440px;
+     margin: 0 auto;
+     /* Pour afficher une barre de défilement verticale si besoin sans barre horizontale */
+     overflow-y: auto;
+     overflow-x: hidden;
+     /* Pour Firefox (version récentes avec `scrollbar-width`) */
+     scrollbar-width: thin;
+     /* Fine ou auto pour la largeur par défaut */
+     scrollbar-color: #1d615441 #fbfefc;
+     /* Couleur du curseur et de la piste */
+}
+
+/* Pour Webkit (Chrome, Safari, Edge) */
+.miniatures::-webkit-scrollbar-thumb {
+     background-color: #1d615441;
+     /* Couleur de la partie défilante */
+     width: 5px;
+     /* Largeur de la barre de défilement */
+}
+
+.miniatures::-webkit-scrollbar-track {
+     background: #fbfefc;
+     /* Arrière-plan de la barre de défilement */
+}
+
+.miniatures div {
+     position: relative;
+     overflow: hidden;
+}
+
+.miniatures div img {
+     width: 100%;
+     height: 103px;
+     object-fit: cover;
+     object-position: center;
+}
+
+.trash-work {
+     background-color: black;
+     padding: 4px;
+     line-height: 1;
+     color: white;
+     font-size: 12px;
+     position: absolute;
+     border-radius: 3px;
+     margin: 0;
+     top: 5px;
+     right: 5px;
+     cursor: pointer;
+}
+
+.trash-work:hover {
+     background-color: rgba(0, 0, 0, 0.7);
+     color: red;
+}
+
+/***** pied modale *****/
+.pied-modale {
+     position: absolute;
+     bottom: 45px;
+     display: flex;
+     flex-direction: column;
+}
+
+.separateur {
+     width: 440px;
+     height: 1px;
+     border-top: 1px solid #b3b3b3;
+}
+
+.pied-modale a {
+     max-width: 237px;
+     margin: 35px auto 0 auto;
+     font-size: 14px;
+     width: 237px;
+     cursor: pointer;
+}
+
+/******* Modale ajout *****/
+#form-ajout {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     width: 440px;
+     gap: 10px;
+}
+
+#zone-input-file {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     width: 100%;
+     height: 169px;
+     background-color: rgba(232, 241, 246, 1);
+     gap: 8px;
+     position: relative;
+}
+
+#zone-ajout-img {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     position: absolute;
+     top: 0px;
+     height: 169px;
+     width: 440px;
+}
+
+#defaut-input {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.zone-titcateg label {
+     margin-bottom: 4px;
+}
+
+.fa-image {
+     display: flex;
+     align-items: center;
+     color: rgba(185, 197, 204, 1);
+     font-size: 70px;
+     height: 65px;
+     margin-top: 2px;
+}
+
+.btn-file {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-weight: 500;
+     color: rgba(48, 102, 133, 1);
+     background-color: rgba(203, 214, 220, 1);
+     border-radius: 50px;
+     height: 36px;
+     width: 173px;
+     margin-top: 3px;
+     cursor: pointer;
+     z-index: 2;
+}
+
+#files {
+     position: absolute;
+     top: 0px;
+     height: 169px;
+     width: 440px;
+     opacity: 0;
+     z-index: 2;
+}
+
+.image-ajout {
+     height: 100%;
+     width: auto;
+     object-fit: contain;
+     z-index: 1;
+}
+
+.zone-ajout p {
+     font-size: 10px;
+     color: rgba(68, 68, 68, 1);
+}
+
+.zone-titcateg {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+}
+
+.zone-titcateg label {
+     margin-top: 20px;
+}
+
+.zone-titcateg input,
+.zone-titcateg select {
+     width: 100%;
+     height: 51px;
+     border: none;
+     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+     font-family: "Work sans";
+     padding-left: 10px;
+     padding-right: 10px;
+     /* Pour éviter que l'input dépasse de son parent malgré 
+     les paddings box-sizing: border-box */
+     box-sizing: border-box;
+}
+
+select {
+     font-size: 1.2em;
+     margin-bottom: 50px !important;
+}
+
+option {
+     font-size: 1.2em;
+}
+
+input[type="submit"].avant-ok {
+     border: 1px solid rgba(167, 167, 167, 1);
+     background-color: rgba(167, 167, 167, 1);
+     cursor: pointer;
+}

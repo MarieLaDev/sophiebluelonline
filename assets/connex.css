@@ -1,0 +1,44 @@
+/* Ajout éléments de mise en forme formulaire de connexion */
+#divConnex,
+#connex,
+input,
+.form a {
+     display: flex;
+}
+
+#divConnex {
+     flex-direction: column;
+     align-items: center;
+     gap: 20px;
+     width: 379px;
+     margin: 80px auto 150px auto;
+}
+
+.inactif {
+     display: none !important;
+}
+
+#connex {
+     flex-direction: column;
+     text-align: left;
+     width: 100%;
+}
+
+#email,
+#password {
+     padding-left: 10px;
+     padding-right: 10px;
+}
+
+input[type="submit"] {
+     cursor: pointer;
+}
+
+#connex a {
+     font-family: "Work sans";
+     text-align: center;
+     color: black;
+     font-weight: 500;
+     font-size: 14px;
+     cursor: pointer;
+}

@@ -1,0 +1,23 @@
+# Node.js
+/node_modules/
+
+# Environment files
+.env
+
+# Build output
+/dist/
+/build/
+
+# Editor directories
+.vscode/
+/.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# Temporary files
+*.log
